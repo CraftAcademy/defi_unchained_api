@@ -7,7 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'spec_helper'
 require 'webmock/rspec'
-WebMock.disable_net_connect!
+WebMock.enable_net_connect!
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -27,7 +27,6 @@ RSpec.configure do |config|
   config.include Shoulda::Matchers::ActiveRecord, type: :model
   config.include ResponseJSON
   config.before(:each) do
-    
   market_fixture = File.open("#{fixture_path}/market_cap_fixture.json").read
 
   stub_request(:get, "https://api.nomics.com/v1/market-cap/history?key=aaf997cff4f9e722484a7a24ca78e9d3&start=2021-02-16T14:13:31.364Z").

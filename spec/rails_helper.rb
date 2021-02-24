@@ -31,8 +31,12 @@ RSpec.configure do |config|
     stub_request(:get, 'https://api.nomics.com/v1/market-cap/history?key=aaf997cff4f9e722484a7a24ca78e9d3&start=2021-02-16T14:13:31.364Z')
       .to_return(status: 200, body: market_fixture, headers: {})
     stub_request(:get, 'https://api.nomics.com/v1/market-cap/history?key=aaf997cff4f9e722484a7a24ca78e9d3&start=')
-      .to_return(status: 422, body: "", headers: {})
+      .to_return(status: 422, body: '', headers: {})
     stub_request(:get, 'https://api.nomics.com/v1/market-cap/history?key=aaf997cff4f9e722484a7a24ca78e9d3&start=today%207%20days%20ago')
-      .to_return(status: 422, body: "", headers: {})
+      .to_return(status: 422, body: '', headers: {})
+
+    currencies_fixture = File.open("#{fixture_path}/currencies_fixture.json").read
+    stub_request(:get, 'https://api.nomics.com/v1/currencies/ticker?ids=BTC,ETH,XRP,%20ADA,%20LTC,%20DOT&interval=1d&key=aaf997cff4f9e722484a7a24ca78e9d3')
+      .to_return(status: 200, body: currencies_fixture, headers: {})
   end
 end

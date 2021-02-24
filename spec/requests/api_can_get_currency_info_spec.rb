@@ -17,7 +17,7 @@ RSpec.describe 'GET api/currencies', type: :request do
     end
 
     it 'response with rounded price' do
-      expect(response_json['currencies'].first['price']).to eq 49844.3
+      expect(response_json['currencies'].first['price']).to eq 49844.33
     end
 
     it 'response with %' do

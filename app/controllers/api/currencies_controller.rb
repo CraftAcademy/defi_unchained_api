@@ -7,8 +7,8 @@ class Api::CurrenciesController < ApplicationController
       {
         name: coin['name'],
         logo: coin['logo_url'],
-        price: coin['price'].to_f.round(1),
-        change: coin['1d']['price_change_pct'].to_f*100
+        price: coin['price'].to_f.round(2),
+        change: coin['1d']['price_change_pct'].to_f*100.round(2)
       }
     end
     render json: {

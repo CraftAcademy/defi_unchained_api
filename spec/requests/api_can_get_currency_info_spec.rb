@@ -16,6 +16,5 @@ RSpec.describe 'GET api/currencies', type: :request do
       expect(response_json['currencies'].first['name']).to eq "Bitcoin"
       expect(response_json['currencies'].first['price']).to eq "49844.33422620"
     end
-
   end
 end

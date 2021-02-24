@@ -11,7 +11,6 @@ class Api::MarketsController < ApplicationController
         market_data: res_body
       }
     rescue RestClient::UnprocessableEntity => e
-      binding.pry
       render json: {
         message: "External API couldn't handle your request"
       }, status: 422

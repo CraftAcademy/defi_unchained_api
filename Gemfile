@@ -9,6 +9,7 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.3'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rest-client'
+gem 'devise_token_auth'
 
 group :development, :test do
   gem 'factory_bot_rails'

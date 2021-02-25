@@ -13,7 +13,7 @@ RSpec.describe 'GET /api/news', type: :request do
     end
 
     it 'returns an array of articles' do
-      expect(response_json['articles']).should be_an(Array)
+      expect(response_json['articles']).to be_instance_of(Array)
     end
 
     it 'an article contains the expected title' do
@@ -21,7 +21,7 @@ RSpec.describe 'GET /api/news', type: :request do
     end
 
     it 'an article contains the expected image url' do
-      expect(response_json['articles'].first['urlToImage"']).to eq 'https://wwd.com/wp-content/uploads/2021/02/Installation-View37.jpg?w=640&h=415&crop=1'
+      expect(response_json['articles'].first['urlToImage']).to eq 'https://wwd.com/wp-content/uploads/2021/02/Installation-View37.jpg?w=640&h=415&crop=1'
     end
 
     it 'an article contains the expected url' do

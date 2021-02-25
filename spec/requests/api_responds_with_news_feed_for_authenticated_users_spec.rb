@@ -36,4 +36,17 @@ RSpec.describe 'GET /api/news', type: :request do
       expect(response_json['articles'].first['date']).to eq '2021-02-25T12:30:42Z'
     end
   end
+
+  describe 'unsuccessfully with unauthenticated user' do
+    before do
+      get '/api/news',
+          params: '2021-02-20'
+    end
+
+    it 'should respons with a 401' do
+      expect(response).to have_http_status 401
+
+      
+    end
+  end
 end

@@ -1,4 +1,5 @@
 class Api::NewsController < ApplicationController
+  before_action :authenticate_user!
   def index
     news_key = Rails.application.credentials.news
     response = RestClient.get("http://newsapi.org/v2/everything?q=crypto&from=#{params['date']}&sortBy=publishedAt&apiKey=#{news_key}")
@@ -12,10 +13,9 @@ class Api::NewsController < ApplicationController
         date: article['publishedAt']
       
       }
-      
       end
       render json: {
         articles: res_filtered 
-      }
-  end
+      } 
+  end  
 end

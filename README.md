@@ -12,3 +12,8 @@ As a Crypto API
 In order to serve a client with info about top 5 cryptos
 I would like to be able to provide an endpoint for a currencies/ticker index
 ```
+```
+As a crypto API
+In order to give authenticated users access to news
+It needs to respond with a list of news for authenticated requests
+```

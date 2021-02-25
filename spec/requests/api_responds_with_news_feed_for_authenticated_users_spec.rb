@@ -4,6 +4,7 @@ RSpec.describe 'GET /api/news', type: :request do
   describe 'successfully with authenticated user' do
     before do
       get '/api/news',
+          params: '2021-02-20',
           headers: auth_headers
     end
 
@@ -12,7 +13,7 @@ RSpec.describe 'GET /api/news', type: :request do
     end
 
     it 'returns an array of articles' do
-      expect(response_json['articles']).should be_an(Array) 
+      expect(response_json['articles']).should be_an(Array)
     end
 
     it 'an article contains the expected title' do
@@ -32,7 +33,7 @@ RSpec.describe 'GET /api/news', type: :request do
     end
 
     it 'an article contains the expected date' do
-      expect(response_json['articles'].first['publishedAt']).to eq '2021-02-25T12:30:42Z'
+      expect(response_json['articles'].first['date']).to eq '2021-02-25T12:30:42Z'
     end
   end
 end

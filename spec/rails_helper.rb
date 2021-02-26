@@ -38,5 +38,9 @@ RSpec.configure do |config|
     currencies_fixture = File.open("#{fixture_path}/currencies_fixture.json").read
     stub_request(:get, 'https://api.nomics.com/v1/currencies/ticker?ids=BTC,ETH,XRP,%20ADA,%20LTC,%20DOT&interval=1d&key=aaf997cff4f9e722484a7a24ca78e9d3')
       .to_return(status: 200, body: currencies_fixture, headers: {})
+
+    news_fixture = File.open("#{fixture_path}/crypto_news_fixture.json").read
+    stub_request(:get, "http://newsapi.org/v2/everything?apiKey=18c7ceeb856b42bf8ac6c0624adbc52f&from=#{(Time.now - 5.days).strftime('%Y-%m-%d')}&q=crypto&sortBy=publishedAt")
+      .to_return(status: 200, body: news_fixture, headers: {})
   end
 end

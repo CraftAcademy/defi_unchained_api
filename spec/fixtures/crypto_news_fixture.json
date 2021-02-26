@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "totalResults": 1032,
+  "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "WWD"
+      },
+      "author": "Kristen Tauer",
+      "title": "Is Blockchain the Future of Art Collecting?",
+      "description": "Artist Ry David Bradley is selling works from his new gallery show at The Hole in New York as physical art and nonfungible tokens through digital art marketplace SuperRare.",
+      "url": "https://wwd.com/eye/lifestyle/ry-david-bradley-the-hole-gallery-nyc-nft-blockchain-1234727774/",
+      "urlToImage": "https://wwd.com/wp-content/uploads/2021/02/Installation-View37.jpg?w=640&h=415&crop=1",
+      "publishedAt": "2021-02-25T12:30:42Z",
+      "content": "It’s a classic quantum thought experiment: if an artwork is hanging on the wall of a gallery and also online, which one is the original artwork?\r\nFor artist Ry David Bradley, the answer is: time will… [+4645 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "Huw Jones",
+      "title": "Five things shaping Britain's financial rulebooks after Brexit",
+      "description": "Britain is conducting a review of its financial rulebooks and policies to see how it can keep its 130 billion pound ($184 billion) finance sector competitive...",
+      "url": "https://finance.yahoo.com/news/five-things-shaping-britains-financial-121936886.html",
+      "urlToImage": "https://s.yimg.com/uu/api/res/1.2/M0ekytLEXv5lbcfGQhO5dg--~B/aD01MzQ7dz04MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/reuters.com/a21bed84f4d84b63b9fb9ecad75505c8",
+      "publishedAt": "2021-02-25T12:19:36Z",
+      "content": "By Huw Jones\r\nLONDON (Reuters) - Britain is conducting a review of its financial rulebooks and policies to see how it can keep its 130 billion pound ($184 billion) finance sector competitive after Br… [+4431 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "WinFuture"
+      },
+      "author": "Christian Kahle",
+      "title": "GPU-Hersteller Nvidia macht eine bemerkenswerte Entwicklung durch",
+      "description": "Der Grafikchip-Hersteller Nvidia macht seit Jahren eine erstaunliche Entwicklung durch. Das Unternehmen wächst und wächst und benötige weniger als zwei Jahre, um den Umsatz mit seinen Grafikprozessoren zu verdoppeln.(Weiter lesen)",
+      "url": "https://winfuture.de/news,121428.html",
+      "urlToImage": "https://img.winfuture.de/teaser/1920/38173.jpg",
+      "publishedAt": "2021-02-25T12:18:00Z",
+      "content": "Der Grafikchip-Hersteller Nvidia macht seit Jahren eine erstaunliche Entwicklung durch. Das Unternehmen wächst und wächst und benötigte weniger als zwei Jahre, um den Umsatz mit seinen Grafikprozesso… [+1799 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": "Harry Robertson",
+      "title": "10 things you need to know before the opening bell",
+      "description": "Summary List PlacementWelcome to 10 Things Before the Opening Bell. Sign up here to get this email in your inbox every morning.\nSign up for Insider Investing for your weekly markets analysis.\nHere's what you need to know before markets open.\n1. Global stocks …",
+      "url": "https://www.businessinsider.com/opening-bell-february-25-2021-2",
+      "urlToImage": "https://i.insider.com/60378905bed5c50011a2c63d?width=1200&format=jpeg",
+      "publishedAt": "2021-02-25T11:33:33Z",
+      "content": "Insider logo\r\nThe word \"Insider\".\r\nClose icon\r\nTwo crossed lines that form an 'X'. It indicates a way to close an interaction, or dismiss a notification.\r\nHomeChevron icon\r\nIt indicates an expandable… [+260 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Clubic"
+      },
+      "author": "Guillaume Belfiore",
+      "title": "Opera Software lance un service de cashback et une carte de paiement virtuelle",
+      "description": "Opera Software a une nouvelle ambition : attirer les utilisateurs par l'appât du gain. La société annonce le lancement d'un nouveau produit baptisé « Dify ».",
+      "url": "https://www.clubic.com/navigateur-internet/opera/actualite-362963-opera-software-lance-un-service-de-cashback-et-une-carte-de-paiement-virtuelle.html",
+      "urlToImage": "https://pic.clubic.com/v1/images/1833056/raw?width=900&height=600&fit=max&hash=035889930f3cb69fe3c24c57cbe8cf38e79e5449",
+      "publishedAt": "2021-02-25T11:30:00Z",
+      "content": "L'application Dify se double d'un portefeuille avec une carte de paiement virtuelle générée par Mastercard. Cette dernière est compatible avec le dispositif de paiement sans contact Google Pay. \r\nL'a… [+1150 chars]"
+    }
+  ]
+}

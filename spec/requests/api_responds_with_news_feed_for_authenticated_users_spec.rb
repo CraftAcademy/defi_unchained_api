@@ -43,7 +43,7 @@ RSpec.describe 'GET /api/news', type: :request do
     before do
       get '/api/news',
       params: {
-        date:'2021-02-20'
+        date: "#{(Time.now - 5.days).strftime('%Y-%m-%d')}"
       }
     end
 

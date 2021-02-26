@@ -4,7 +4,9 @@ RSpec.describe 'GET /api/news', type: :request do
   describe 'successfully with authenticated user' do
     before do
       get '/api/news',
-          params: '2021-02-20',
+          params: {
+            date: "#{(Time.now - 5.days).strftime('%Y-%m-%d')}"
+          },
           headers: auth_headers
     end
 
@@ -33,20 +35,41 @@ RSpec.describe 'GET /api/news', type: :request do
     end
 
     it 'an article contains the expected date' do
-      expect(response_json['articles'].first['date']).to eq '2021-02-25T12:30:42Z'
+      expect(response_json['articles'].first['date']).to eq '2021-02-25'
     end
   end
 
   describe 'unsuccessfully with unauthenticated user' do
     before do
       get '/api/news',
-          params: '2021-02-20'
+      params: {
+        date:'2021-02-20'
+      }
     end
 
-    it 'should respons with a 401' do
+    it 'should respond with a 401' do
       expect(response).to have_http_status 401
+    end
 
-      
+    it 'should respond with expected error message' do
+      expect(response_json['errors'].first).to eq 'You need to sign in or sign up before continuing.'
+    end
+  end
+  describe 'unsuccessfully with wrong params' do
+    before do
+      get '/api/news',
+        params: {
+          date: 'not a date'
+        },
+        headers: auth_headers
+    end
+
+    it 'responds with a 422 status' do
+      expect(response).to have_http_status 422
+    end
+
+    it 'respond with expected error message' do
+      expect(response_json['errors']).to eq "Date param is faulty"
     end
   end
 end

@@ -40,7 +40,7 @@ RSpec.configure do |config|
       .to_return(status: 200, body: currencies_fixture, headers: {})
 
     news_fixture = File.open("#{fixture_path}/crypto_news_fixture.json").read
-    stub_request(:get, 'http://newsapi.org/v2/everything?apiKey=18c7ceeb856b42bf8ac6c0624adbc52f&from=&q=crypto&sortBy=publishedAt')
+    stub_request(:get, "http://newsapi.org/v2/everything?apiKey=18c7ceeb856b42bf8ac6c0624adbc52f&from=#{(Time.now - 5.days).strftime('%Y-%m-%d')}&q=crypto&sortBy=publishedAt")
       .to_return(status: 200, body: news_fixture, headers: {})
   end
 end

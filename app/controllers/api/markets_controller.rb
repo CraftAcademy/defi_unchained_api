@@ -12,7 +12,7 @@ class Api::MarketsController < ApplicationController
     }
   rescue RestClient::UnprocessableEntity => e
     render json: {
-      message: "External API couldn't handle your request"
+      errors: "External API couldn't handle your request"
     }, status: 422
   end
 end

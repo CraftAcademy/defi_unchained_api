@@ -13,6 +13,7 @@ class Api::SubscriptionsController < ApplicationController
     if current_user.subscriber?
       render json: {
         subscriber: true,
+        email: current_user.email
       }
     else
       render json: {

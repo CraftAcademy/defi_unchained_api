@@ -12,7 +12,6 @@ RSpec.describe 'POST /api/subscriptions', type: :request do
     end
 
     it 'responds with a message' do
-      binding.pry
       expect(response_json['message']).to eq 'Congratulations!'
     end
 
@@ -44,6 +43,10 @@ RSpec.describe 'POST /api/subscriptions', type: :request do
 
     it 'responds with subscriber true' do
       expect(response_json['subscriber']).to eq true
+    end
+
+    it 'responds with the users email' do
+      expect(response_json['subscribe']).to eq 'user@gmail.com'
     end
   end
 end

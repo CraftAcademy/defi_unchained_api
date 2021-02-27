@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :currencies, only: [:index]
   resources :news, only: [:index]
   resources :buy_signals, only: [:index]
+  resources :subscriptions, only: [:index, :create]
   end
 end

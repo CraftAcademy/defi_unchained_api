@@ -1,10 +1,10 @@
 RSpec.describe 'GET /api/buy_signals', type: :request do
   describe 'successfully as subscriber' do
     let!(:subscriber) { create(:user, subscriber: true) }
-    let(:subscriber_headers) {subscriber.create_new_auth_token}
+    let(:subscriber_headers) { subscriber.create_new_auth_token}
     before do
       get '/api/buy_signals',
-          { headers: subscriber_headers }
+          headers: subscriber_headers
     end
 
     it 'responds with a 200 status' do
@@ -25,7 +25,7 @@ RSpec.describe 'GET /api/buy_signals', type: :request do
     let(:user_headers) {user.create_new_auth_token}
     before do
       get '/api/buy_signals',
-          { headers: user_headers }
+          headers: user_headers
     end
 
     it 'responds with a 401' do
@@ -35,6 +35,5 @@ RSpec.describe 'GET /api/buy_signals', type: :request do
     it 'responds with appropriate error message' do
       expect(response_json['errors']).to eq 'You need to be a subscribe to view this'
     end
-
   end
 end

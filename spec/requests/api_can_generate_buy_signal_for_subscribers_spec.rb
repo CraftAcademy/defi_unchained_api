@@ -12,11 +12,11 @@ RSpec.describe 'GET /api/buy_signals', type: :request do
     end
 
     it 'responds with a buy signal' do
-      expect(response_json['signal']['coin']).to eq 'Bitcoin'
+      expect(response_json['signal']['coin']).to eq 'Ethereum'
     end
 
     it 'responds with a logo for the coin' do
-      expect(response_json['signal']['logo']).to eq 'url'
+      expect(response_json['signal']['logo']).to eq 'https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg'
     end
   end
 

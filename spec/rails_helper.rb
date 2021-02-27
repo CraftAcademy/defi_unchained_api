@@ -42,5 +42,9 @@ RSpec.configure do |config|
     news_fixture = File.open("#{fixture_path}/crypto_news_fixture.json").read
     stub_request(:get, "http://newsapi.org/v2/everything?apiKey=18c7ceeb856b42bf8ac6c0624adbc52f&from=#{(Time.now - 5.days).strftime('%Y-%m-%d')}&q=crypto&sortBy=publishedAt")
       .to_return(status: 200, body: news_fixture, headers: {})
+
+    weather_fixture = File.open("#{fixture_path}/is_is_raining_in_sahara_fixture.json").read
+    stub_request(:get, 'http://api.openweathermap.org/data/2.5/weather?appid=dd89a790d8ab2952c627a0f648c45436&lat=23.806078&lon=11.288452&units=metric')
+      .to_return(status: 200, body: weather_fixture, headers: {})
   end
 end

@@ -7,7 +7,8 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'spec_helper'
 require 'webmock/rspec'
-WebMock.disable_net_connect!
+require 'stripe_mock'
+WebMock.enable_net_connect!
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -27,6 +28,7 @@ RSpec.configure do |config|
   config.include Shoulda::Matchers::ActiveRecord, type: :model
   config.include ResponseJSON
   config.before(:each) do
+    StripeMock.start
     market_fixture = File.open("#{fixture_path}/market_cap_fixture.json").read
     stub_request(:get, 'https://api.nomics.com/v1/market-cap/history?key=aaf997cff4f9e722484a7a24ca78e9d3&start=2021-02-16T14:13:31.364Z')
       .to_return(status: 200, body: market_fixture, headers: {})
@@ -46,5 +48,8 @@ RSpec.configure do |config|
     weather_fixture = File.open("#{fixture_path}/is_is_raining_in_sahara_fixture.json").read
     stub_request(:get, 'http://api.openweathermap.org/data/2.5/weather?appid=dd89a790d8ab2952c627a0f648c45436&lat=23.806078&lon=11.288452&units=metric')
       .to_return(status: 200, body: weather_fixture, headers: {})
+  end
+  config.after(:each) do
+    StripeMock.stop
   end
 end

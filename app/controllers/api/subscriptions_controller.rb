@@ -2,11 +2,17 @@ class Api::SubscriptionsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    current_user.update(subscriber: true)
-    render json: {
-      subscriber: true,
-      message: 'Congratulations!'
-    }
+    paid = perform_payment()
+    if paid
+      current_user.update(subscriber: true)
+      render json: {
+        paid: true
+      }
+    end
+    rescue StandardError => e
+      render json: {
+        message: e.message
+      }, status: 422
   end
 
   def index
@@ -20,5 +26,21 @@ class Api::SubscriptionsController < ApplicationController
         subscriber: false
       }
     end
+  end
+
+  private
+
+  def perform_payment
+    customer = Stripe::Customer.create(
+      email: current_user.email,
+      source: params['stripeToken'],
+      description: "Welcome to DeFi Unchained!"
+    )
+    charge = Stripe::Charge.create(
+      customer: customer.id,
+      amount: 75*100,
+      currency: 'sek'
+    )
+    charge.paid
   end
 end

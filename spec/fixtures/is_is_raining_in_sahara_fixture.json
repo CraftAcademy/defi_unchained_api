@@ -1,0 +1,42 @@
+{
+  "coord": {
+      "lon": 11.2885,
+      "lat": 23.8061
+  },
+  "weather": [
+      {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+      }
+  ],
+  "base": "stations",
+  "main": {
+      "temp": 21.73,
+      "feels_like": 17.51,
+      "temp_min": 21.73,
+      "temp_max": 21.73,
+      "pressure": 1017,
+      "humidity": 20,
+      "sea_level": 1017,
+      "grnd_level": 924
+  },
+  "visibility": 10000,
+  "wind": {
+      "speed": 2.76,
+      "deg": 79
+  },
+  "clouds": {
+      "all": 0
+  },
+  "dt": 1614429889,
+  "sys": {
+      "sunrise": 1614404327,
+      "sunset": 1614446201
+  },
+  "timezone": 3600,
+  "id": 0,
+  "name": "",
+  "cod": 200
+}

@@ -10,6 +10,7 @@ gem 'rails', '~> 6.1.3'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rest-client'
 gem 'devise_token_auth'
+gem 'stripe-rails'
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -18,6 +19,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'coveralls', require: false
   gem 'webmock'
+  gem 'stripe-ruby-mock', require: 'stripe_mock'
 end
 
 group :development do

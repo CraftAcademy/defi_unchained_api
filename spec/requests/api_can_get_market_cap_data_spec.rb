@@ -29,7 +29,7 @@ RSpec.describe 'GET /api/markets', type: :request do
     end
 
     it 'responds with appropriate error message' do
-      expect(response_json['message']).to eq "External API couldn't handle your request"
+      expect(response_json['errors']).to eq "External API couldn't handle your request"
     end
   end
   describe 'unsuccessfully with wrong params' do
@@ -45,7 +45,7 @@ RSpec.describe 'GET /api/markets', type: :request do
     end
 
     it 'responds with appropriate error message' do
-      expect(response_json['message']).to eq "External API couldn't handle your request"
+      expect(response_json['errors']).to eq "External API couldn't handle your request"
     end
   end
 end
